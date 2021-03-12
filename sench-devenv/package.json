@@ -1,21 +1,13 @@
 {
-  "name": "bsg-server",
+  "name": "sench-devenv",
   "version": "1.0.0",
-  "description": "'Hello Hello' 테스트입니다.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "scripts": {
+      "dev": "webpack-dev-server --progress --colors --inline --hot"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yuJaeWoo/bsg-server.git"
-  },
-  "author": "yuJaeWoo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yuJaeWoo/bsg-server/issues"
-  },
-  "homepage": "https://github.com/yuJaeWoo/bsg-server#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
@@ -26,7 +18,6 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
-    "nodemon": "^2.0.7",
     "pm2": "^4.5.4",
     "sequelize": "^6.5.0"
   },
