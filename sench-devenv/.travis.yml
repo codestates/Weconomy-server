@@ -1,0 +1,17 @@
+language: node_js
+
+node_js: 15.9.0
+
+env:
+  - USER=pp8960 REPO=sench-devenv
+
+install:
+  - npm ci
+
+script:
+  - npm test
+
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - docker build -t $USER/$REPO:${TRAVIS_COMMIT::7} .
+  - docker push $USER/$REPO:${TRAVIS_COMMIT::7}
